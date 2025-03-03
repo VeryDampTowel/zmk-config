@@ -38,7 +38,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
-			display-name = "QWERTY";
+            display-name = "QWERTY";
         };
 
         lower_layer {
@@ -58,7 +58,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
-			display-name = "LOWER";
+            display-name = "LOWER";
         };
 
         raise_layer {
@@ -78,7 +78,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
-			display-name = "UPPER";
+            display-name = "UPPER";
         };
     };
 };
