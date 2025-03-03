@@ -1,6 +1,6 @@
 # VeryDampTowel's ZMK Config
 
-[![Build](https://github.com/VeryDampTowel/zmk-config/workflows/build.yml/badge.svg)](https://github.com/VeryDampTowel/zmk-config/actions)
+![Build](https://github.com/VeryDampTowel/zmk-config/actions/workflows/build.yml/badge.svg)
 
 I'm using the Lily58 with:
 - nice!view OLEDs
@@ -8,4 +8,4 @@ I'm using the Lily58 with:
 - 1 encoder on each side
 
 
-Build is based off the [Lily-Pro-RE(https://github.com/kissetfall/Lily58-Pro-RE)
+Build is based off the [Lily-Pro-RE](https://github.com/kissetfall/Lily58-Pro-RE)
