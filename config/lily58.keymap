@@ -5,22 +5,19 @@
  */
 
 #include <behaviors.dtsi>
-#include <lily58.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
 // Necessary due to https://discord.com/channels/719497620560543766/1332582951770390578
+
 / {
 	sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <20>;
     };
-};
 
-
-/ {
     keymap {
         compatible = "zmk,keymap";
 
