@@ -53,20 +53,21 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
+		// status = "disabled";
     };
 
 // START MODIFICATIONS
 // I added in this from https://github.com/nickcoutsos/keymap-editor/issues/190
 // Also used this as reference: https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/lily58/lily58.dtsi
+// Another reference: https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/sofle/sofle.dtsi
 
     right_encoder: encoder_right {
         compatible = "alps,ec11";
-        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // change these
-        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         resolution = <2>;
+		// status = "disabled";
     };
-
-&left_encoder { resolution = <2>; };
 // END MODIFICATIONS
 
     sensors: sensors {
