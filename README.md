@@ -9,3 +9,7 @@ I'm using the Lily58 with:
 
 
 Build is based off the [Lily-Pro-RE](https://github.com/kissetfall/Lily58-Pro-RE)
+
+## Tools
+- [Keymap Editor](https://github.com/nickcoutsos/keymap-editor)
+- [Keymap Drawer](https://github.com/caksoylar/keymap-drawer)
