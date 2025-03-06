@@ -15,8 +15,15 @@ Revisions:
     - Added homerow mod (CAGS) on left hand base layer
     - Added backspace to left hand
     - added ` to left hand
-
-
+1.1
+    - added backspace to left thumb
+    - added homerow mod (SGAC) on right hand base layer 
+    - right encoder click will play/pause media
+    - left encoder click will printscreen
+    - right encoder wheel does page up/down
+    - added backslash and minus to right side
+    - Lower layer has FN keys on left hand and numpad on right hand
+        - moved display power toggle on left hand
 */
 
 / {
@@ -47,42 +54,42 @@ Revisions:
 
  	default_layer {
             // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  F   |  P   |  B   |                   |  J   |  L    |  U    |  Y   |   ;   |   -   |
-            // |  BSPC |  A  |  R  |  S   |  T   |  G   |                   |  M   |  N    |  E    |  I   |   O   |   '   |
-            // |   `   |  Z  |  X  |  C   |  D   |  V   |   "["  |  |  "]"  |  K   |  H    |  ,    |  .   |   /   | SHIFT |
-            //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
+            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                           |  6   |  7    |  8    |  9   |   0   |   -   |
+            // |  TAB  |  Q  |  W  |  F   |  P   |  B   |                           |  J   |  L    |  U    |  Y   |   ;   |   \   |
+            // |  BSPC |  A  |  R  |  S   |  T   |  G   |                           |  M   |  N    |  E    |  I   |   O   |   '   |
+            // |   `   |  Z  |  X  |  C   |  D   |  V   |  PSCRN  |  |  Play/Pause  |  K   |  H    |  ,    |  .   |   /   | SHIFT |
+            //                     | ALT  | BSPC | LOWER|  SPACE  |  | ENTER        | RAISE| BSPC  | GUI   |
 
 
             bindings = <
-&kp ESC   &kp N1       &kp N2      &kp N3      &kp N4           &kp N5                           &kp N6  &kp N7    &kp N8     &kp N9   &kp N0         &kp GRAVE
-&kp TAB   &kp Q        &kp W       &kp F       &kp P            &kp B                            &kp J   &kp L     &kp U      &kp Y    &kp SEMICOLON  &kp MINUS
-&kp BSPC  &bhm LCTL A  &bhm LALT R &bhm GUI S  &bhm LSFT T      &kp G                            &kp M   &kp N     &kp E      &kp I    &kp O          &kp SQT
-&kp GRAVE &kp Z        &kp X       &kp C       &kp D            &kp V     &kp LBKT     &kp RBKT  &kp K   &kp H     &kp COMMA  &kp DOT  &kp FSLH       &kp RSHFT
-                                   &kp LALT    &kp LGUI         &mo 1     &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp RGUI
+&kp ESC   &kp N1       &kp N2      &kp N3       &kp N4          &kp N5                           &kp N6  &kp N7        &kp N8      &kp N9      &kp N0         &kp MINUS
+&kp TAB   &kp Q        &kp W       &kp F        &kp P           &kp B                            &kp J   &kp L         &kp U       &kp Y       &kp SEMICOLON  &kp BACKSLASH
+&kp BSPC  &bhm LCTL A  &bhm LALT R &bhm LGUI S  &bhm LSHFT T    &kp G                            &kp M   &kp RSHFT N   &kp RGUI E  &kp RALT I  &kp RCTL O     &kp SQT
+&kp GRAVE &kp Z        &kp X       &kp C        &kp D           &kp V     &kp PSCRN    &kp C_PP  &kp K   &kp H         &kp COMMA   &kp DOT     &kp FSLH       &kp RSHFT
+                                   &kp LALT     &kp BSPC        &mo 1     &kp SPACE    &kp RET   &mo 2   &kp BSPC      &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
             display-name = "COLEMAK";
         };
 
         lower_layer {
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
+            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |  7    |  8    |  9   |       |       |
+            // |  F7   |  F8 |  F9 |  F10 |  F11 |  F12 |                   |      |  4    |  5    |  6   |   +   |   -   |
+            // |       |     |     |      |      |      |        |  |       |      |  1    |  2    |  3   |   *   |   /   |
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans     &trans    &trans    &trans
-&kp F1      &kp F2            &kp F3             &kp F4             &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-&kp GRAVE   &kp EXCL          &kp AT             &kp HASH           &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp TILDE
-&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans        &trans        &trans    &trans  &trans     &kp MINUS  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
-                                                 &trans             &trans        &trans        &trans    &trans  &trans     &trans     &trans
+&bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4                      &none    &none     &none    &none    &none           &none
+&kp F1      &kp F2            &kp F3             &kp F4             &kp F5        &kp F6                            &none    &kp N7    &kp N8   &kp N9   &kp BSPC        &kp KP_EQUAL
+&kp F7      &kp F8            &kp F9             &kp F10            &kp F11       &kp F12                           &none    &kp N4    &kp N5   &kp N6   &kp PLUS        &kp MINUS
+&none       &none             &none              &none              &none         &ext_power EP_TOG        &none    &none    &kp N1    &kp N2   &kp N3   &kp KP_MULTIPLY &kp KP_DIVIDE
+                                                 &none              &none         &none        &none       &none    &none    &kp N0    &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
             display-name = "LOWER";
         };
 
@@ -102,7 +109,7 @@ Revisions:
                            &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
             display-name = "UPPER";
         };
     };
