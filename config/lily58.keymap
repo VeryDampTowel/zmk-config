@@ -24,6 +24,9 @@ Revisions:
     - added backslash and minus to right side
     - Lower layer has FN keys on left hand and numpad on right hand
         - moved display power toggle on left hand
+    - NOTE: Upper layer is not used at this point and is set to stock configs
+
+
 */
 
 / {
@@ -64,7 +67,7 @@ Revisions:
             bindings = <
 &kp ESC   &kp N1       &kp N2      &kp N3       &kp N4          &kp N5                           &kp N6  &kp N7        &kp N8      &kp N9      &kp N0         &kp MINUS
 &kp TAB   &kp Q        &kp W       &kp F        &kp P           &kp B                            &kp J   &kp L         &kp U       &kp Y       &kp SEMICOLON  &kp BACKSLASH
-&kp BSPC  &bhm LCTL A  &bhm LALT R &bhm LGUI S  &bhm LSHFT T    &kp G                            &kp M   &bhm RSHFT N  &bhm RGUI E &bhm RALT I &bhm RCTL O     &kp SQT
+&kp BSPC  &bhm LCTL A  &bhm LALT R &bhm LGUI S  &bhm LSHFT T    &kp G                            &kp M   &bhm RSHFT N  &bhm RGUI E &bhm RALT I &bhm RCTL O    &kp SQT
 &kp GRAVE &kp Z        &kp X       &kp C        &kp D           &kp V     &kp PSCRN    &kp C_PP  &kp K   &kp H         &kp COMMA   &kp DOT     &kp FSLH       &kp RSHFT
                                    &kp LALT     &kp BSPC        &mo 1     &kp SPACE    &kp RET   &mo 2   &kp BSPC      &kp RGUI
             >;
@@ -79,14 +82,14 @@ Revisions:
             // |  F1   |  F2 |  F3 |  F4  |  F5   |  F6   |                   |      |  7    |  8    |  9   |       |       |
             // |  F7   |  F8 |  F9 |  F10 |  F11  |  F12  |                   |      |  4    |  5    |  6   |   +   |   -   |
             // |       |     |     |      |       | power |        |  |       |      |  1    |  2    |  3   |   *   |   /   |
-            //                     |      | LOWER |       |        |  |       |      |       |       |
+            //                     |      | LOWER |       |        |  | ENTER |  0   |  .    |       |
 
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1    &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4                           &none    &none     &none    &none    &none           &none
-&kp F1      &kp F2            &kp F3          &kp F4             &kp F5        &kp F6                                 &none    &kp N7    &kp N8   &kp N9   &kp BSPC        &kp KP_EQUAL
+&kp F1      &kp F2            &kp F3          &kp F4             &kp F5        &kp F6                                 &none    &kp N7    &kp N8   &kp N9   &kp BSPC        &kp EQUAL
 &kp F7      &kp F8            &kp F9          &kp F10            &kp F11       &kp F12                                &none    &kp N4    &kp N5   &kp N6   &kp PLUS        &kp MINUS
 &none       &none             &none           &none              &none         &ext_power EP_TOG &none       &none    &none    &kp N1    &kp N2   &kp N3   &kp KP_MULTIPLY &kp KP_DIVIDE
-                                              &none              &none         &trans            &none       &none    &none    &kp N0    &none
+                                              &none              &none         &trans            &none       &kp RET  &kp N0   &kp DOT   &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
