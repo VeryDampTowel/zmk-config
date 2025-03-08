@@ -70,7 +70,7 @@ Revisions:
 &kp TAB   &kp Q        &kp W       &kp F         &kp P           &kp B                            &kp J   &kp L         &kp U       &kp Y       &kp SEMICOLON  &kp BACKSLASH
 &kp BSPC  &bhm LCTL A  &bhm LALT R &bhm LGUI S   &bhm LSHFT T    &kp G                            &kp M   &bhm RSHFT N  &bhm RGUI E &bhm RALT I &bhm RCTL O    &kp SQT
 &kp GRAVE &kp Z        &kp X       &kp C         &kp D           &kp V     &kp PSCRN    &kp C_PP  &kp K   &kp H         &kp COMMA   &kp DOT     &kp FSLH       &kp RSHFT
-                                   &kp caps_word &kp BSPC        &mo 1     &kp SPACE    &kp RET   &mo 2   &kp BSPC      &kp RGUI
+                                   &caps_word    &kp BSPC        &mo 1     &kp SPACE    &kp RET   &mo 2   &kp BSPC      &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
